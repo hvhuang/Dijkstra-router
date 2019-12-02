@@ -96,6 +96,7 @@ public class Dijkstra {
         }
     }
 
+    //对于已经遍历的节点，把它做为边的终点的值设为无穷大
     private static int [][]rewrite(int graph[][], int n, int y) {
         for (int i = 1; i < n + 1; i++) {
             graph[i][y] = POSITIVE_INFINITY;
@@ -103,6 +104,7 @@ public class Dijkstra {
         return graph;
     }
 
+    //判断是否全部路径已经遍历完成
     private static boolean AllDone (int cost[], int n){
         for (int i = 1; i < n +1; i++) {
             if (cost[i] != -1 && cost[i] !=POSITIVE_INFINITY) {
